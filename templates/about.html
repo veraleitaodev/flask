@@ -1,5 +1,9 @@
-{% extends 'base.html' %} 
-{% block content %}
+{% extends 'base.html' %} {% block content %}
+
+{{% for number in list_of_numbers %}}
+    <p>{{ number }}</p>
+{% endfor %}
+
 <h2>{{ page_title }}</h2>
 <p>
   The formation of the group grew out of a meeting Gandalf had with Thorin in
@@ -234,16 +238,16 @@
     <p>
       Originally called Olórin, he was accounted as the wisest of the Maiar
       (with the possible exception of Melian). He was created by Ilúvatar before
-      the Music of the Ainur, and was at the beginning of Time amongst the
-      Ainur who entered into Eä. In his "youth," he became one of the Maiar
-      who served Manwë, Varda, Irmo and Nienna named. He was associated with
-      light and fire, much like his peer Varda. Yet his ways often took him
-      to Nienna, from whom he learned pity and patience. He loved the Elves, but
-      he walked unseen among them, or wore a fana that appeared like an Elf, and
-      sent them fair visions in their hearts that made them wiser. Throughout
-      his existence, he followed the example of Nienna, he took pity on the
-      sorrows of the Children of Ilúvatar and drove those who listened to him
-      out of despair.
+      the Music of the Ainur, and was at the beginning of Time amongst the Ainur
+      who entered into Eä. In his "youth," he became one of the Maiar who served
+      Manwë, Varda, Irmo and Nienna named. He was associated with light and
+      fire, much like his peer Varda. Yet his ways often took him to Nienna,
+      from whom he learned pity and patience. He loved the Elves, but he walked
+      unseen among them, or wore a fana that appeared like an Elf, and sent them
+      fair visions in their hearts that made them wiser. Throughout his
+      existence, he followed the example of Nienna, he took pity on the sorrows
+      of the Children of Ilúvatar and drove those who listened to him out of
+      despair.
     </p>
   </div>
   <div class="col-md-5">
