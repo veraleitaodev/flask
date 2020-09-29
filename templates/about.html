@@ -16,23 +16,30 @@
   leave on other business, welcomed a fourteenth to fill into their party.
 </p>
 
-{% for member in company %}
-
-<div class="row featurette">
-  <div class="col-md-7">
-    <h3>{{ member.name }}</h3>
-    <p>
-      {{ member.description }}
-    </p>
-  </div>
-  <div class="col-md-5">
-    <img class="featurette-image image-responsive"
-      src="{{ member.image_source }}"
-    />
-  </div>
-</div>
-<hr class="featurette-divider">
-  
-{% endfor %}
-
+{% for member in company %} 
+        {% if loop.index % 2 != 0 %}
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h3><a href="/about/{{ member.url }}">{{ loop.index }}. {{ member.name }}</a></h3>
+                    <p>{{ member.description }}</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="featurette-image img-responsive" src="{{ member.image_source }}" alt="Picture of {{ member.name }}">
+                </div>
+            </div>
+        {% else %}
+            <div class="row featurette">
+                <div class="col-md-5">
+                    <img class="featurette-image img-responsive" src="{{ member.image_source }}" alt="Picture of {{ member.name }}">
+                </div>
+                <div class="col-md-7">
+                    <h3><a href="/about/{{ member.url }}">{{ loop.index }}. {{ member.name }}</a></h3>
+                    <p>{{ member.description }}</p>
+                </div>
+            </div>
+        {% endif %} 
+        {% if loop.index != 13 %}
+            <hr class="featurette-divider"> 
+        {% endif %} 
+    {% endfor %} 
 {% endblock %}
